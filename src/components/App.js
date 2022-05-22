@@ -1,13 +1,18 @@
-import React from 'react'
-import '../styles/App.css';
+import React, { useState } from "react";
+import "../styles/App.css";
 const App = () => {
-  
+  const [state, setState] = useState("true");
+  const toggle = function () {
+    setState(!state);
+  };
   return (
     <div id="main">
-
+      <h1 id="marco-polo">{state ? "Marco" : "Polo"}</h1>
+      <button id="marco-polo-toggler" onClick={toggle}>
+        {state ? "Polo" : "Marco"}
+      </button>
     </div>
-  )
-}
-
+  );
+};
 
 export default App;
